@@ -1,0 +1,171 @@
+*{
+    font-family: 'Oswald',sans-serif; /*fonte usada no meu projeto*/
+    box-sizing: border-box; /*vai levar em consideração o pading e a borda*/ 
+}
+
+
+body{
+    height: 100vh; /*altura*/
+    margin: 0px; /**área de margem nos quatro lados do elemento*/
+    display: grid; /*Layout introduz um sistema bi-dimensional de grid (literalmente "grades")*/
+    grid-template-rows: 120px 1fr 60px; /* Minha página vai ter 3 linhas > header, conteúdo e footer e esses recebem o tamanho definido respectivamente*/
+    /*vamos definir o nosso css grid*/
+    grid-template-columns: 1fr;
+    grid-template-areas: /*áres da grid*/
+     "cabecalho"
+     "principal"
+     "rodape";
+
+}
+
+.cabecalho{
+    grid-area: cabecalho;
+    background-color: #A9A9A9; /*cor do plano de fundo, seja de um elemento ou do documento como um todo.*/
+    color:#f0f0f0; /*cor do meu título h1 e h2*/
+    display: flex; /*Tudo vai para uma linha só. Ou seja meus h1 h2 etc*/
+    flex-direction: column; /*ocupar a coluna */
+    justify-content: center ; /* h1 h2 centralizado*/
+    align-items: center ; /*itens centralizados*/
+    padding-bottom: 10px ;
+
+}
+
+.cabecalho > h1{
+    margin: 0px;
+    font-weight: 300; /*especifica o peso ou a intensidade da fonte (ex.: negrito)*/
+    font-size: 2.8rem; /*font-size : tamanho da fonte*/
+    
+
+}
+
+.cabecalho > h2{
+    margin: 0px;
+    font-weight: 200;
+    font-size: 1.5rem;
+
+}
+
+
+.principal{
+    grid-area: principal;
+    height: cal(100vh -180px); /* tamanho do meu reader e do meu footer */
+    background-color: #f0f0f0; /*cor de fundo cinza*/
+    padding: 20px; /* faz com que nada fique grudado > espaço*/
+   
+}
+
+.conteudo{ /*caixa branca dentro da cinza*/
+    position:relative; /*posicionamento relativo*/
+    height: 100%; /*altura de 100%*/
+    overflow-y: scroll;/*elementos colocados dentro dessa área for maior ou seja, extrapolar : ele vai colocar um scroll somente onde esta passando*/
+    background-color: #fff; /*cor de fundo*/
+    padding: 20px;
+    box-shadow:0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+}
+
+.rodape{
+    grid-area: rodape;
+    background-color:#f0f0f0;
+    position: sticky;
+     bottom: 0px ; /*faz com que meu rodapé sempre fique fixo*/
+    display: flex;
+    justify-content: flex-end; /*alinhar meu elemento a direita*/
+    align-items: center;
+    font-size: 1.2rem;
+    padding-right: 20px; /*espaço a direita de 20px*/
+    color:#444;
+}
+
+.modulos{
+    display:flex; /*todos os elementos ficarão na mesma linha*/
+    flex-wrap: wrap;/*permite a quebra de linha dos "módulos"*/
+    justify-content: space-around; /* espaço não só do lado esquerdo e direito mas também entre os elementos*/
+    margin-bottom: 45px;
+
+}
+
+
+.modulo{
+    margin-bottom: 10px;
+    flex-basis: 32%; /*quanto cada elemento vai ocupar > essa resolução define 1/3 */
+
+}
+
+.modulo > h3{ /*titulo "Módulo"*/
+    margin: 0px;
+    color:#fff; /*cor do texto branca*/
+    font-weight: 300; /*espeçura do negrito*/
+    font-size: 1.5rem;/* tamanho da fonte do texto*/
+    padding: 10px 20px; /*define uma a distância entre o conteúdo de um elemento e suas bordas. */
+    background-color: #1867c0; /*cor de fundo*/
+
+
+}
+
+.modulo > ul {
+    margin: 0px;
+    padding: 10px ; /*espaço de 10 px do meu elemento com a borda*/
+    list-style: none; /*sem bolinha*/
+    
+
+}
+
+
+.modulo > ul > li {
+   
+    padding: 7px ; /*espaço de 10 px entre os li*/
+   font-size: 1.2em;
+   cursor: pointer; /*cursor que indica link (mãozinha)*/
+
+}
+
+.modulo > ul > li > a{
+   
+    display: flex;
+    text-decoration: none ; /* Sem sublinhado*/
+    color:#222;
+
+}
+
+.modulo > ul > li:hover{
+   
+   background-color:#EEE; /*reflexo cinza claro ao passar o mouse*/
+
+}
+
+.modulo.aqua{border: 2px solid #00FFFF;}
+.modulo.aqua > h3 {background-color: #00FFFF;}
+
+
+
+.modulo.dark{border: 2px solid #00CED1;}
+.modulo.dark > h3 {background-color: #00CED1;}
+
+
+
+.modulo.turquise{border: 2px solid #40E0D0;}
+.modulo.turquise > h3 {background-color: #40E0D0;}
+
+
+
+.modulo.medium{border: 2px solid #48D1CC;}
+.modulo.medium > h3 {background-color: #48D1CC;}
+
+
+.modulo.light{border: 2px solid #20B2AA;}
+.modulo.light> h3 {background-color: #20B2AA;}
+
+
+.modulo.teal{border: 2px solid  	#008080;}
+.modulo.teal > h3 {background-color: 	#008080;}
+
+.modulo.aquamarine{border: 2px solid #7FFFD4;}
+.modulo.aquamarine > h3 {background-color: #7FFFD4;}
+
+.modulo.mediumaquamarine{border: 2px solid #66CDAA;}
+.modulo.mediumaquamarine > h3 {background-color: #66CDAA;}
+
+.modulo.cadet{border: 2px solid #5F9EA0;}
+.modulo.cadet> h3 {background-color: #5F9EA0;}
+
+
